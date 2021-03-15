@@ -1,0 +1,185 @@
+@import 'config';
+
+
+*{
+    box-sizing: border-box;
+    font-family: $font-stack;
+}
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container{
+    max-width: 1368px;
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    text-align: center;
+    .logo{
+        width: 5rem;
+    }
+    h1{
+        font-size: 2.5rem;
+        font-weight: 300;
+        color: $gray;
+        margin-bottom: 0;
+        span{
+            color: $very-dark-blue;
+            font-weight: 800;
+        }
+    }
+    p{
+        font-size: 1.1rem;
+        font-weight: 300;
+        color: $very-dark-blue;
+        margin-top: 0.8rem;
+    }
+    form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+        .form-control{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            input{
+                width: 20rem;
+                padding: 0.7rem 1.5rem;
+                border: none;
+                outline: none;
+                border: 1px solid $gray;
+                opacity: 0.6;
+                border-radius: 20px;
+                &::placeholder{
+                    color: $gray;
+                }
+            }
+            small{
+                display: none;
+                position: absolute;
+                bottom: -1.4rem;
+                left: 1rem;
+                color: $light-red;
+                font-weight: 600;
+                font-style: italic;
+                opacity: 0.8;
+                font-size: 0.75rem;
+            }
+            &.error{
+                input{
+                    border: 2px solid $light-red;
+                    &::placeholder{
+                        color: #000;
+                    }
+                }
+                small{
+                    display: block;
+                }
+            }
+            &.success{
+                input{
+                    border: 2px solid rgb(22, 207, 22);
+                    &::placeholder{
+                        color: #000;
+                    }
+                }
+                small{
+                    display: none;
+                }
+            }
+        }
+        button{
+            margin-left: 1rem;
+            width: 9rem;
+            padding: 0.7rem 0.8rem;
+            border: none;
+            outline: none;
+            background-color: $blue;
+            border: 2px solid $blue;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px hsl(223, 87%, 79%);
+            cursor: pointer;
+        }
+    }
+    .dashboard{
+        margin-top: 4rem;
+        width: 75%;
+    }
+    .social-icons{
+        margin-top: 4rem;
+        i{
+            color: $blue;
+            border: 1px solid hsl(0, 0%, 89%);;
+            border-radius: 50%;
+            padding: 0.45rem 0.6rem;
+            margin: 0 0.5rem;
+            cursor: pointer;
+        }
+    }
+    .footer{
+        margin-top: 2rem;
+        color: $gray;
+        font-size: 0.9rem;
+    }
+}
+
+.attribution{
+    margin-top: -1rem;
+    padding: 1rem 1rem 2rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #000;
+    font-weight: 600;
+    a{
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width: 500px){
+    .container{
+        .logo{
+            width: 4rem;
+        }
+        h1{
+            font-size: 2rem;
+        }
+        p{
+            font-size: 0.9rem;
+        }
+        form{
+            flex-direction: column;
+            .form-control{
+                margin-bottom: 1rem;
+                width: 100%;
+                input{
+                    display: block;
+                    width: 100%;
+                    transition: 0.3s ease all;
+                }
+                small{
+                    position: static;
+                    display: none;
+                    margin-top: 0.5rem;
+                    text-align: left;
+                }
+            }
+            button{
+                transition: 0.3s ease all;
+                margin-left: 0;
+                width: 100%;
+                margin-top: 0rem;
+            }
+        }
+        .dashboard{
+            width: 90%;
+        }
+        .footer{
+            font-size: 0.8rem;
+        }
+    }
+}
